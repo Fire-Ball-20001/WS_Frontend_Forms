@@ -1,0 +1,24 @@
+.tooltip {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  gap: 5px 5px;
+  align-items: center;
+  background-color: #545454;
+}
+
+.tooltip__text--ok,
+.tooltip__text--error {
+  font-size: 11px;
+}
+
+.tooltip__text--error {
+  color: red;
+}
+
+.tooltip__text--ok {
+  color: chartreuse;
+}

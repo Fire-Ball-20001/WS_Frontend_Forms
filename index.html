@@ -1,0 +1,108 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/table.css" />
+    <link rel="stylesheet" href="styles/tooltip.css" />
+    <title>Forms</title>
+    <script src="scripts/scripts.js"></script>
+    <script src="scripts/tooltip_sc.js"></script>
+    <script src="scripts/work_data.js"></script>
+  </head>
+  <body>
+    <form id="form" class="main" action="#">
+      <fieldset class="main__border">
+        <section class="main__wrapper wrapper">
+          <p class="wrapper__label">Фамилия*</p>
+          <div class="wrapper">
+            <button name="req_text" class="wrapper__tooltip" type="button">?</button>
+            <input required="true" name="last_name" class="wrapper__input" type="text" />
+          </div>
+        </section>
+      </fieldset>
+      <fieldset class="main__border">
+        <section class="main__wrapper wrapper">
+          <p class="wrapper__label">Имя*</p>
+          <div class="wrapper">
+            <button name="req_text" class="wrapper__tooltip" type="button">?</button>
+            <input name="first_name" required="true" class="wrapper__input" type="text" />
+          </div>
+        </section>
+      </fieldset>
+      <fieldset class="main__border">
+        <section class="main__wrapper wrapper">
+          <p class="wrapper__label">Отчество</p>
+          <input name="otch" class="wrapper__input" type="text" />
+        </section>
+      </fieldset>
+      <fieldset class="main__border">
+        <section class="main__wrapper wrapper">
+          <p class="wrapper__label">Дата рождения*</p>
+          <div class="wrapper">
+            <button name="req_date" class="wrapper__tooltip" type="button">?</button>
+            <input name="date_birth" required="true" class="wrapper__input" type="date" />
+          </div>
+        </section>
+      </fieldset>
+      <fieldset class="main__border">
+        <section class="main__wrapper wrapper">
+          <p class="wrapper__label">Телефон*</p>
+          <div class="wrapper">
+            <button name="req_phone" class="wrapper__tooltip" type="button">?</button>
+            <input name="phone" required="true" class="wrapper__input" type="tel" />
+          </div>
+        </section>
+      </fieldset>
+      <fieldset id="border_checkboxes" class="main__border">
+        <section class="main__wrapper wrapper">
+          <p class="wrapper__label">Какое направление выбрали?*</p>
+          <div class="wrapper">
+            <button name="req_napr" class="wrapper__tooltip" type="button">?</button>
+            <div
+              style="flex-direction: column; align-items: flex-start"
+              class="wrapper__checkboxs wrapper">
+              <label class="wrapper">
+                <input name="is_frontend" checked="true" type="checkbox" />
+                <p>Frontend</p>
+              </label>
+              <label class="wrapper">
+                <input name="is_backend" type="checkbox" />
+                <p>Backend</p>
+              </label>
+              <label class="wrapper">
+                <input name="is_mobile" type="checkbox" />
+                <p>Mobile</p>
+              </label>
+            </div>
+          </div>
+        </section>
+      </fieldset>
+      <fieldset class="main__border">
+        <section class="main__wrapper wrapper">
+          <p class="wrapper__label">Сделали ли 3-ий ПР?</p>
+          <select name="is_pr" class="wrapper__is-pr">
+            <option value="ok">Да</option>
+            <option selected value="work">В работе</option>
+            <option value="no">Нет</option>
+          </select>
+        </section>
+      </fieldset>
+      <p id ="error" style="display: none; color: red;">Не все условия выполнены</p>
+      <button id="send_button">Готово</button>
+    </form>
+    <table id="table" class="main__table" cellspacing="0px">
+      <thead>
+        <tr>
+          <th style="padding-right: 0px">ФИО</th>
+          <th>Телефон</th>
+          <th>Дата рождения</th>
+          <th>Направление(я)</th>
+          <th>Есть ли 3-ий пр</th>
+        </tr>
+      </thead>
+    </table>
+  </body>
+</html>
