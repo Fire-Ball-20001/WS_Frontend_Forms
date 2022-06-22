@@ -64,3 +64,7 @@
   max-width: 320px;
   min-width: 160px;
 }
+
+.wrapper__checkbox {
+  border-radius: 1px;
+}

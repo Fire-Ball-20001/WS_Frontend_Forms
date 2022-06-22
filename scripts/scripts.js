@@ -50,18 +50,17 @@ function validity() {
 }
 
 function validityChecboxes() {
-  const front = document.getElementsByName("is_frontend")[0];
-  const back = document.getElementsByName("is_backend")[0];
-  const mob = document.getElementsByName("is_mobile")[0];
+  const checkboxes = Array.from(document.getElementsByClassName("wrapper__checkbox"));
   const border = document.getElementById("border_checkboxes");
 
-  if (!front.checked && !back.checked && !mob.checked) {
-    border.classList.add("main__border--error");
-    return false;
-  } else {
-    border.classList.remove("main__border--error");
-    return true;
+  for(const checkbox of checkboxes) {
+    if (checkbox.checked) {
+      border.classList.remove("main__border--error");
+      return true;
+    }
   }
+  border.classList.add("main__border--error");
+  return false;
 }
 
 function validityDate() {
