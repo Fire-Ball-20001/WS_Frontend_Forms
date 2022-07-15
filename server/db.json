@@ -1,45 +1,17 @@
 {
   "posts": [
     {
-      "last_name": "Test",
-      "first_name": "Test",
-      "otch": "",
-      "date_birth": "2022-06-01",
-      "phone": "8(960)123-31-64",
-      "is_frontend": "on",
-      "is_mobile": "on",
+      "last_name": "вы",
+      "first_name": "ыв",
+      "middleName": "",
+      "date_birth": "2022-07-05",
+      "phone": "8(563)135-66-45",
+      "direction": [
+        "Frontend",
+        "Mobile"
+      ],
       "is_pr": "work",
-      "id": 1
-    },
-    {
-      "last_name": "ф",
-      "first_name": "ф",
-      "otch": "",
-      "date_birth": "2022-06-01",
-      "phone": "8(960)123-31-64",
-      "is_frontend": "on",
-      "is_pr": "work",
-      "id": 3
-    },
-    {
-      "last_name": "ф",
-      "first_name": "ф",
-      "otch": "",
-      "date_birth": "2022-06-09",
-      "phone": "8(960)123-31-64",
-      "is_frontend": "on",
-      "is_pr": "work",
-      "id": 4
-    },
-    {
-      "last_name": "фф",
-      "first_name": "ф",
-      "otch": "",
-      "date_birth": "2022-06-09",
-      "phone": "8(960)123-31-64",
-      "is_frontend": "on",
-      "is_pr": "work",
-      "id": 5
+      "id": 7
     }
   ],
   "comments": [],

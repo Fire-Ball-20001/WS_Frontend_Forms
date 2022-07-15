@@ -1,43 +1,5 @@
 function loadPage() {
-  const req_text = document.getElementsByName("req_text");
-
-  req_text.forEach((element) => {
-    element.onmouseover = (mouse) => {
-      const input =
-        element.parentElement.getElementsByClassName("wrapper__input")[0];
-      textTooltip(mouse, input);
-    };
-  });
-
-  const req_date = document.getElementsByName("req_date");
-
-  req_date.forEach((element) => {
-    element.onmouseover = (mouse) => {
-      const input =
-        element.parentElement.getElementsByClassName("wrapper__input")[0];
-      dateTooltip(mouse, input);
-    };
-  });
-
-  const req_napr = document.getElementsByName("req_napr");
-
-  req_napr.forEach((element) => {
-    element.onmouseover = (mouse) => {
-      naprTooltip(mouse);
-    };
-  });
-
-  const req_phone = document.getElementsByName("req_phone");
-
-  req_phone.forEach((element) => {
-    element.onmouseover = (mouse) => {
-      const input =
-        element.parentElement.getElementsByClassName("wrapper__input")[0];
-      phoneTooltip(mouse, input);
-    };
-  });
-
-  const all_tooltips = document.getElementsByClassName("wrapper__tooltip");
+  const all_tooltips = document.getElementsByClassName("tooltip-button-border");
 
   for (const element of all_tooltips) {
     element.onmouseout = () => {
@@ -105,12 +67,12 @@ function dateTooltip(mouse, input) {
   const data_tooltip = [];
 
   if (input.value === "") {
-    date.push(createText("Необходимо значение", false));
+    data_tooltip.push(createText("Необходимо значение", false));
   } else {
     data_tooltip.push(createText("Всё хорошо", true));
   }
 
-  if (!validityDate()) {
+  if (!validateDate()) {
     data_tooltip.push(createText("Дата должна быть прошлым", false));
   } else {
     data_tooltip.push(createText("Дата соответствует", true));
@@ -126,7 +88,7 @@ function dateTooltip(mouse, input) {
 function naprTooltip(mouse) {
   let tooltip;
 
-  if (!validityChecboxes()) {
+  if (!validateChecboxes()) {
     tooltip = createTooltip([
       createText("Необходимо выбрать хотя бы одно", false),
     ]);

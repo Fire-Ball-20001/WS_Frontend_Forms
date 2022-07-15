@@ -15,7 +15,7 @@ async function loadData() {
       "Content-Type": "application-json",
     },
   });
-  
+
   response.json().then((data) => {
     updateTable(data);
   });
@@ -23,8 +23,14 @@ async function loadData() {
 
 function getFormData(form) {
   const formData = new FormData(form);
-  const res = Object.fromEntries(formData);
-
+  const res = {};
+  for (let i of formData.keys()) {
+    if (i === "direction") {
+      res[i] = formData.getAll(i);
+    } else {
+      res[i] = formData.get(i);
+    }
+  }
   return res;
 }
 
@@ -34,37 +40,28 @@ function updateTable(data) {
 
   data.forEach((element) => {
     const row = document.createElement("tr");
-    let napr = "";
-    let is_pr = "Нет";
+    let is_pr = "";
 
-    if (element.is_frontend) {
-      napr = "Frontend, ";
-    }
+    switch (element.is_pr) {
+      case "ok":
+        is_pr = "Да";
+        break;
 
-    if (element.is_backend) {
-      napr += "Backend, ";
-    }
+      case "work":
+        is_pr = "В работе";
+        break;
 
-    if (element.is_mobile) {
-      napr += "Mobile, ";
-    }
-
-    napr = napr.substring(0, napr.length - 2);
-
-    if (element.is_pr == "ok") {
-      is_pr = "Да";
-    }
-
-    if (element.is_pr == "work") {
-      is_pr = "В работе";
+      default:
+        is_pr = "Нет";
+        break;
     }
 
     const oneRow = {
-      name: `${element.first_name} ${element.last_name} ${element.otch}`,
+      name: `${element.first_name} ${element.last_name} ${element.middleName}`,
       phone: element.phone,
       date_birth: element.date_birth,
-      napr: napr,
-      is_pr: is_pr,
+      direction: element.direction.join(", "),
+      is_pr,
     };
 
     Object.values(oneRow).forEach((cellText) => {

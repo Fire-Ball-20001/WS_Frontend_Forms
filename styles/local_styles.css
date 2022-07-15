@@ -28,7 +28,7 @@
   outline: 2px solid #7f7fff;
 }
 
-.main__border {
+.main-border {
   border: 2px solid #7f7fff2e;
   border-radius: 10px;
   padding: 5px;
@@ -36,7 +36,7 @@
   width: 100%;
 }
 
-.main__border--error {
+.main-border--error {
   border: 2px solid #ff7f7fa3;
 }
 
@@ -44,7 +44,7 @@
   border: 1px solid #ff7f7fa3;
 }
 
-.wrapper__tooltip {
+.tooltip-button-border {
   background: white;
   color: #aaaaaa;
   border: 1px solid #aaaaaa;

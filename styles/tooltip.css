@@ -10,6 +10,10 @@
   background-color: #545454;
 }
 
+.tooltip-text-hover {
+  font-size: 14px;
+}
+
 .tooltip__text--ok,
 .tooltip__text--error {
   font-size: 11px;

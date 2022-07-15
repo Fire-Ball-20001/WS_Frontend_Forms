@@ -3,8 +3,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/styles.css" />
-    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/global_styles.css" />
+    <link rel="stylesheet" href="styles/local_styles.css" />
     <link rel="stylesheet" href="styles/table.css" />
     <link rel="stylesheet" href="styles/tooltip.css" />
     <title>Forms</title>
@@ -14,83 +14,122 @@
   </head>
   <body>
     <form id="form" class="main" action="#">
-      <fieldset class="main__border">
-        <section class="main__wrapper wrapper">
-          <p class="wrapper__label">Фамилия*</p>
-          <div class="wrapper">
-            <button name="req_text" class="wrapper__tooltip" type="button">?</button>
-            <input required="true" name="last_name" class="wrapper__input" type="text" />
+      <section class="main__wrapper wrapper main-border">
+        <label class="wrapper__label" for="last_name">Фамилия</label>
+        <div class="wrapper">
+          <div class="wrapper__tooltip tooltip-button-border">
+            <p class="tooltip-text-hover">?</p>
           </div>
-        </section>
-      </fieldset>
-      <fieldset class="main__border">
-        <section class="main__wrapper wrapper">
-          <p class="wrapper__label">Имя*</p>
-          <div class="wrapper">
-            <button name="req_text" class="wrapper__tooltip" type="button">?</button>
-            <input name="first_name" required="true" class="wrapper__input" type="text" />
+          <input
+            required="true"
+            id="last_name"
+            name="last_name"
+            class="wrapper__input"
+            type="text"
+          />
+        </div>
+      </section>
+      <section class="main__wrapper wrapper main-border">
+        <label class="wrapper__label" for="first_name" >Имя</label>
+        <div class="wrapper">
+          <div class="wrapper__tooltip tooltip-button-border">
+            <p class="tooltip-text-hover">?</p>
           </div>
-        </section>
-      </fieldset>
-      <fieldset class="main__border">
-        <section class="main__wrapper wrapper">
-          <p class="wrapper__label">Отчество</p>
-          <input name="otch" class="wrapper__input" type="text" />
-        </section>
-      </fieldset>
-      <fieldset class="main__border">
-        <section class="main__wrapper wrapper">
-          <p class="wrapper__label">Дата рождения*</p>
-          <div class="wrapper">
-            <button name="req_date" class="wrapper__tooltip" type="button">?</button>
-            <input name="date_birth" required="true" class="wrapper__input" type="date" />
+          <input
+            name="first_name"
+            id="first_name"
+            required="true"
+            class="wrapper__input"
+            type="text"
+          />
+        </div>
+      </section>
+      <section class="main__wrapper wrapper main-border">
+        <label class="wrapper__label" for="middleName">Отчество</label>
+        <input id="middleName" name="middleName" class="wrapper__input" type="text" />
+      </section>
+      <section class="main__wrapper wrapper main-border">
+        <label class="wrapper__label" for="date_birth">Дата рождения</label>
+        <div class="wrapper">
+          <div class="wrapper__tooltip tooltip-button-border">
+            <p class="tooltip-text-hover">?</p>
           </div>
-        </section>
-      </fieldset>
-      <fieldset class="main__border">
-        <section class="main__wrapper wrapper">
-          <p class="wrapper__label">Телефон*</p>
-          <div class="wrapper">
-            <button name="req_phone" class="wrapper__tooltip" type="button">?</button>
-            <input name="phone" required="true" class="wrapper__input" type="tel" />
+          <input
+            name="date_birth"
+            id="date_birth"
+            required="true"
+            class="wrapper__input"
+            type="date"
+          />
+        </div>
+      </section>
+      <section class="main__wrapper wrapper main-border">
+        <label class="wrapper__label" for="phone">Телефон</label>
+        <div class="wrapper">
+          <div class="wrapper__tooltip tooltip-button-border">
+            <p class="tooltip-text-hover">?</p>
           </div>
-        </section>
-      </fieldset>
-      <fieldset id="border_checkboxes" class="main__border">
-        <section class="main__wrapper wrapper">
-          <p class="wrapper__label">Какое направление выбрали?*</p>
-          <div class="wrapper">
-            <button name="req_napr" class="wrapper__tooltip" type="button">?</button>
-            <div
-              style="flex-direction: column; align-items: flex-start"
-              class="wrapper__checkboxs wrapper">
-              <label class="wrapper">
-                <input name="is_frontend" class="wrapper__checkbox" checked="true" type="checkbox" />
-                <p>Frontend</p>
-              </label>
-              <label class="wrapper">
-                <input name="is_backend" class="wrapper__checkbox" type="checkbox" />
-                <p>Backend</p>
-              </label>
-              <label class="wrapper">
-                <input name="is_mobile" class="wrapper__checkbox" type="checkbox" />
-                <p>Mobile</p>
-              </label>
-            </div>
+          <input
+            name="phone"
+            id="phone"
+            required="true"
+            class="wrapper__input"
+            type="tel"
+          />
+        </div>
+      </section>
+      <section id="border_checkboxes" class="main__wrapper wrapper main-border">
+        <label class="wrapper__label">Какое направление выбрали?*</label>
+        <div class="wrapper">
+          <div class="wrapper__tooltip tooltip-button-border">
+            <p class="tooltip-text-hover">?</p>
           </div>
-        </section>
-      </fieldset>
-      <fieldset class="main__border">
-        <section class="main__wrapper wrapper">
-          <p class="wrapper__label">Сделали ли 3-ий ПР?</p>
-          <select name="is_pr" class="wrapper__is-pr">
-            <option value="ok">Да</option>
-            <option selected value="work">В работе</option>
-            <option value="no">Нет</option>
-          </select>
-        </section>
-      </fieldset>
-      <p id ="error" style="display: none; color: red;">Не все условия выполнены</p>
+          <div
+            style="flex-direction: column; align-items: flex-start"
+            class="wrapper__checkboxs wrapper"
+          >
+            <label class="wrapper">
+              <input
+                name="direction"
+                value="Frontend"
+                class="wrapper__checkbox"
+                checked="true"
+                type="checkbox"
+              />
+              <p>Frontend</p>
+            </label>
+            <label class="wrapper">
+              <input
+                name="direction"
+                value="Backend"
+                class="wrapper__checkbox"
+                type="checkbox"
+              />
+              <p>Backend</p>
+            </label>
+            <label class="wrapper">
+              <input
+                name="direction"
+                value="Mobile"
+                class="wrapper__checkbox"
+                type="checkbox"
+              />
+              <p>Mobile</p>
+            </label>
+          </div>
+        </div>
+      </section>
+      <section class="main__wrapper wrapper main-border">
+        <label class="wrapper__label" for="is_pr">Сделали ли 3-ий ПР?</label>
+        <select id="is_pr" name="is_pr" class="wrapper__is-pr">
+          <option value="ok">Да</option>
+          <option selected value="work">В работе</option>
+          <option value="no">Нет</option>
+        </select>
+      </section>
+      <p id="error" style="display: none; color: red">
+        Не все условия выполнены
+      </p>
       <button id="send_button" class="main__send-button">Готово</button>
     </form>
     <table id="table" class="main__table" cellspacing="0px">
