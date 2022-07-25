@@ -66,17 +66,8 @@ function textTooltip(mouse, input) {
 function dateTooltip(mouse, input) {
   const data_tooltip = [];
 
-  if (input.value === "") {
-    data_tooltip.push(createText("Необходимо значение", false));
-  } else {
-    data_tooltip.push(createText("Всё хорошо", true));
-  }
-
-  if (!validateDate()) {
-    data_tooltip.push(createText("Дата должна быть прошлым", false));
-  } else {
-    data_tooltip.push(createText("Дата соответствует", true));
-  }
+  data_tooltip.push(input.value  ? createText("Всё хорошо", true) : createText("Необходимо значение", false));
+  data_tooltip.push(!validateDate()  ? createText("Дата должна быть прошлым", false) : createText("Дата соответствует", true));
 
   const tooltip = createTooltip(data_tooltip);
 
@@ -88,13 +79,11 @@ function dateTooltip(mouse, input) {
 function naprTooltip(mouse) {
   let tooltip;
 
-  if (!validateChecboxes()) {
-    tooltip = createTooltip([
-      createText("Необходимо выбрать хотя бы одно", false),
-    ]);
-  } else {
-    tooltip = createTooltip([createText("Всё хорошо", true)]);
-  }
+  tooltip = createTooltip(
+    !validateChecboxes
+      ? [createText("Необходимо выбрать хотя бы одно", false)]
+      : [createText("Всё хорошо", true)]
+  );
 
   tooltip.style.top = mouse.clientY;
   tooltip.style.left = mouse.clientX;
