@@ -1,0 +1,147 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/global_styles.css" />
+    <link rel="stylesheet" href="styles/local_styles.css" />
+    <link rel="stylesheet" href="styles/table.css" />
+    <link rel="stylesheet" href="styles/tooltip.css" />
+    <title>Forms</title>
+    <script src="scripts/validate.js"></script>
+    <script src="scripts/tooltip_sc.js"></script>
+    <script src="scripts/work_is_data.js"></script>
+  </head>
+  <body>
+    <form id="form" class="main" action="#">
+      <section class="main__wrapper wrapper main-border">
+        <label class="wrapper__label" for="last_name">Фамилия</label>
+        <div class="wrapper">
+          <div class="wrapper__tooltip tooltip-button-border">
+            <p class="tooltip-text-hover">?</p>
+          </div>
+          <input
+            required="true"
+            id="last_name"
+            name="last_name"
+            class="wrapper__input"
+            type="text"
+          />
+        </div>
+      </section>
+      <section class="main__wrapper wrapper main-border">
+        <label class="wrapper__label" for="first_name" >Имя</label>
+        <div class="wrapper">
+          <div class="wrapper__tooltip tooltip-button-border">
+            <p class="tooltip-text-hover">?</p>
+          </div>
+          <input
+            name="first_name"
+            id="first_name"
+            required="true"
+            class="wrapper__input"
+            type="text"
+          />
+        </div>
+      </section>
+      <section class="main__wrapper wrapper main-border">
+        <label class="wrapper__label" for="middleName">Отчество</label>
+        <input id="middleName" name="middleName" class="wrapper__input" type="text" />
+      </section>
+      <section class="main__wrapper wrapper main-border">
+        <label class="wrapper__label" for="date_birth">Дата рождения</label>
+        <div class="wrapper">
+          <div class="wrapper__tooltip tooltip-button-border">
+            <p class="tooltip-text-hover">?</p>
+          </div>
+          <input
+            name="date_birth"
+            id="date_birth"
+            required="true"
+            class="wrapper__input"
+            type="date"
+          />
+        </div>
+      </section>
+      <section class="main__wrapper wrapper main-border">
+        <label class="wrapper__label" for="phone">Телефон</label>
+        <div class="wrapper">
+          <div class="wrapper__tooltip tooltip-button-border">
+            <p class="tooltip-text-hover">?</p>
+          </div>
+          <input
+            name="phone"
+            id="phone"
+            required="true"
+            class="wrapper__input"
+            type="tel"
+          />
+        </div>
+      </section>
+      <section id="border_checkboxes" class="main__wrapper wrapper main-border">
+        <label class="wrapper__label">Какое направление выбрали?*</label>
+        <div class="wrapper">
+          <div class="wrapper__tooltip tooltip-button-border">
+            <p class="tooltip-text-hover">?</p>
+          </div>
+          <div
+            style="flex-direction: column; align-items: flex-start"
+            class="wrapper__checkboxs wrapper"
+          >
+            <label class="wrapper">
+              <input
+                name="direction"
+                value="Frontend"
+                class="wrapper__checkbox"
+                checked="true"
+                type="checkbox"
+              />
+              <p>Frontend</p>
+            </label>
+            <label class="wrapper">
+              <input
+                name="direction"
+                value="Backend"
+                class="wrapper__checkbox"
+                type="checkbox"
+              />
+              <p>Backend</p>
+            </label>
+            <label class="wrapper">
+              <input
+                name="direction"
+                value="Mobile"
+                class="wrapper__checkbox"
+                type="checkbox"
+              />
+              <p>Mobile</p>
+            </label>
+          </div>
+        </div>
+      </section>
+      <section class="main__wrapper wrapper main-border">
+        <label class="wrapper__label" for="is_pr">Сделали ли 3-ий ПР?</label>
+        <select id="is_pr" name="is_pr" class="wrapper__is-pr">
+          <option value="ok">Да</option>
+          <option selected value="work">В работе</option>
+          <option value="no">Нет</option>
+        </select>
+      </section>
+      <p id="error" style="display: none; color: red">
+        Не все условия выполнены
+      </p>
+      <button id="send_button" class="main__send-button">Готово</button>
+    </form>
+    <table id="table" class="main__table" cellspacing="0px">
+      <thead>
+        <tr>
+          <th style="padding-right: 0px">ФИО</th>
+          <th>Телефон</th>
+          <th>Дата рождения</th>
+          <th>Направление(я)</th>
+          <th>Есть ли 3-ий пр</th>
+        </tr>
+      </thead>
+    </table>
+  </body>
+</html>

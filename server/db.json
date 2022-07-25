@@ -1,0 +1,21 @@
+{
+  "posts": [
+    {
+      "last_name": "вы",
+      "first_name": "ыв",
+      "middleName": "",
+      "date_birth": "2022-07-05",
+      "phone": "8(563)135-66-45",
+      "direction": [
+        "Frontend",
+        "Mobile"
+      ],
+      "is_pr": "work",
+      "id": 7
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
